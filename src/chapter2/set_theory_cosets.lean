@@ -69,7 +69,7 @@ instance : has_coe_to_fun (A →** B) (λ _, A → B) :=
 {coe := magma_hom.to_fun}
 --end of "magma" homomorphism definition
 
-lemma image_lcoset_of_is_hom {B:Type} [has_mul B] {f : A →** B} {S:set A} {a:A} : (f '' (lcoset (A) (a) (S)) = lcoset (B) (f a) ( f '' S)) := 
+lemma image_of_lcoset_is_hom {B:Type} [has_mul B] {f : A →** B} {S:set A} {a:A} : (f '' (lcoset (A) (a) (S)) = lcoset (B) (f a) ( f '' S)) := 
 begin 
 unfold lcoset,
 ext y, 
@@ -96,7 +96,7 @@ rw ← hb_2,
 exact f.map_mul' a b, 
 end --Actually a really satisfying proof. I was able to simplify zipper's proof here! Very cool.
 
-lemma image_rcoset_of_is_hom {B:Type} [has_mul B] {f : A →** B} {S:set A} {a:A} : (f '' (rcoset (A) (S) (a)) = rcoset (B) ( f '' S) (f a)) := 
+lemma image_of_rcoset_is_hom {B:Type} [has_mul B] {f : A →** B} {S:set A} {a:A} : (f '' (rcoset (A) (S) (a)) = rcoset (B) ( f '' S) (f a)) := 
 begin 
 unfold rcoset,
 ext y, 
